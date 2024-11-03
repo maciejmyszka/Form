@@ -1,0 +1,53 @@
+﻿@model Form.Models.RegisterData
+
+<form asp-action="Register" method="post">
+    <div asp-validation-summary="All"></div>
+
+    <div>
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" />
+    </div>
+
+    <div>
+        <label asp-for="Surname">Surname</label>
+        <input asp-for="Surname" />
+    </div>
+
+    <div>
+        <label asp-for="Email">Email</label>
+        <input type="email" asp-for="Email" />
+    </div>
+
+    <div>
+        <label asp-for="Password">Password</label>
+        <input asp-for="Password" type="password" />
+    </div>
+
+    <div>
+        <label asp-for="ConfirmPassword">Confirm password</label>
+        <input asp-for="ConfirmPassword" type="password" />
+    </div>
+
+    <div>
+        <label asp-for="PhoneNumber">Phone number</label>
+        <input asp-for="PhoneNumber" type="tel" />
+    </div>
+
+    <div>
+        <label asp-for="Age">Age</label>
+        <input asp-for="Age" type="number" />
+    </div>
+
+    <div>
+        <label asp-for="City">City</label>
+        <select asp-for="City" asp-items="Html.GetEnumSelectList<RegisterData.CityEnum>()"></select>
+    </div>
+
+    <div>
+        <input type="submit" />
+    </div>
+
+    <div>
+        <button asp-action="Clear">Clear</button>
+    </div>
+</form>
